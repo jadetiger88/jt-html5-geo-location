@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Geo Meter</title>
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+	</head>
+	<body>
+		<div class="container">
+			<header>
+				<h1>Geo Meter</h1>
+			</header>
+			<section>
+				<div id="StartingPosition">
+					<h4>Starting Position</h4>
+					<p>
+						Latitude:   <span id="startLatitude">-----</span>
+						Longitude: <span id="startLongitude">-----</span>
+					</p>
+				</div>
+				<div id="currentPosition">
+					<h4>Current Position</h4>
+					<p>
+						Latitude:   <span id="currentLatitude">-----</span>
+						Longitude: <span id="currentLongitude">-----</span>
+					</p>
+				</div>
+				<div id="distanceTravelled">
+					<h4>Distance Travelled</h4>
+					<p><span id="distance">-----</span> KM</p>
+				</div>
+				<button id="startBtn" onclick="startTracking()">Start Tracking</button>
+				<button id="stopBtn" onclick="stopTracking()">Stop Tracking</button>
+			</section>
+			<footer>
+				<h4>Copyright &copy; 2015, Jade Tiger</h4>
+			</footer>
+		</div>
+		<script type="text/javascript" src="js/script.js"></script>
+	</body>
+</html>
