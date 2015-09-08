@@ -28,8 +28,8 @@ function stopTracking() {
 	document.getElementById('startBtn').style.display = "inline"; 
 	document.getElementById('stopBtn').style.display = "none"; 
     // Clear the distance displays
-	document.getElementById("currentLatitude").innerHTML = '-----'; 
-	document.getElementById("currentLongitude").innerHTML = '-----'; 
+	document.getElementById("startLatitude").innerHTML = '-----'; 
+	document.getElementById("startLongitude").innerHTML = '-----'; 
 	document.getElementById("currentLatitude").innerHTML = '-----'; 
 	document.getElementById("currentLongitude").innerHTML = '-----'; 
 	document.getElementById("distance").innerHTML = '-----';
