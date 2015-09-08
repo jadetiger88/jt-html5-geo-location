@@ -13,7 +13,6 @@ function startTracking() {
 	// Change the button display
 	document.getElementById('startBtn').style.display = "none"; 
 	document.getElementById('stopBtn').style.display = "inline"; 
-
 	// Get starting Geo location
 	navigator.geolocation.getCurrentPosition(showStartingLocation, showError); 
 	// Get current Geo location
@@ -22,13 +21,23 @@ function startTracking() {
 }
 
 function stopTracking() {
-		// Change the button display
+
+    // Stop geo location watch
+	navigator.geolocation.clearWatch(watchId);
+    // Change the button display
 	document.getElementById('startBtn').style.display = "inline"; 
 	document.getElementById('stopBtn').style.display = "none"; 
+    // Clear the distance displays
+	document.getElementById("currentLatitude").innerHTML = '-----'; 
+	document.getElementById("currentLongitude").innerHTML = '-----'; 
+	document.getElementById("currentLatitude").innerHTML = '-----'; 
+	document.getElementById("currentLongitude").innerHTML = '-----'; 
+	document.getElementById("distance").innerHTML = '-----';
 
 }
 
 function showStartingLocation(pos) {
+
 	startPos = pos; 
 	document.getElementById("startLatitude").innerHTML = pos.coords.latitude; 
 	document.getElementById("startLongitude").innerHTML = pos.coords.longitude; 
@@ -36,6 +45,7 @@ function showStartingLocation(pos) {
 }
 
 function showCurrentLocation(pos) {
+	
 	document.getElementById("currentLatitude").innerHTML = pos.coords.latitude; 
 	document.getElementById("currentLongitude").innerHTML = pos.coords.longitude; 
 	console.log(pos.coords.latitude, pos.coords.longtitude);
@@ -46,7 +56,7 @@ function calculateDistance(startPos, currentPos) {
 
 	var isMiles = false; 
 	var distance = haversineDistance(startPos, currentPos, isMiles); 
-	document.getElementById("distance").innerHTML = distancee;
+	document.getElementById("distance").innerHTML = distance;
 
 }
 
